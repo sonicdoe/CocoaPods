@@ -20,10 +20,10 @@ env:
   - COCOAPODS_CI_TASKS=SPECS
 
 before_install:
-  # See https://docs.travis-ci.com/user/languages/ruby/#bundler-20.
-  - if [ "$TRAVIS_RUBY_VERSION" = "system" ]; then sudo gem install bundler; else gem install bundler; fi
   # RubyGems 2.0.14 isn't a fun time on 2.0.0p648
   - if [ "$TRAVIS_RUBY_VERSION" = "system" ]; then sudo gem update --system; fi
+  # See https://docs.travis-ci.com/user/languages/ruby/#bundler-20.
+  - if [ "$TRAVIS_RUBY_VERSION" = "system" ]; then sudo gem install bundler; else gem install bundler; fi
 
 before_script:
   - git config --global user.email "tests@cocoapods.org"
