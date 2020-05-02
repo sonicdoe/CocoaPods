@@ -19,11 +19,6 @@ rvm:
 env:
   - COCOAPODS_CI_TASKS=SPECS
 
-branches:
-  only:
-    - master
-    - /.+-stable$/
-
 before_install:
   # See https://docs.travis-ci.com/user/languages/ruby/#bundler-20.
   - if [ "$TRAVIS_RUBY_VERSION" = "system" ]; then sudo gem install bundler; else gem install bundler; fi
